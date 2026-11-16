@@ -1,0 +1,3 @@
+Pirata One (Rodrigo Fuenzalida, Nicolas Massi) et Alegreya (Juan Pablo del Peral, Huerta Tipográfica)
+sont distribuées sous la SIL Open Font License 1.1 : https://openfontlicense.org
+Elles servent uniquement à générer l'image d'aperçu des liens (Open Graph).

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>La Trapinette</title>
+<meta name="description" content="La Trapinette : le jeu de dés du Manoir du Crâne-de-Troll. Défie des joueurs du monde entier dans la Ligue internationale.">
+<meta name="theme-color" content="#e0a846">
+<!--OG-->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='6' y='6' width='52' height='52' rx='12' fill='%23efe2c6' stroke='%23e0a846' stroke-width='4'/%3E%3Cg fill='%232a1b10'%3E%3Ccircle cx='22' cy='22' r='5'/%3E%3Ccircle cx='42' cy='42' r='5'/%3E%3Ccircle cx='32' cy='32' r='5'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Alegreya:ital,wght@0,400;0,600;0,800;1,400;1,600&family=Alegreya+SC:wght@500;700&display=swap">
+<link rel="stylesheet" href="/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script src="/portraits.js" defer></script>
+<script src="/app.js" defer></script>
+</head>
+<body>
+<canvas id="monde" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<div class="porte" id="porte">
+  <div class="contenu">
+    <div class="sur">Eauprofonde · quartier des Docks</div>
+    <h1>La Trapinette</h1>
+    <p>La pluie bat les pavés. Derrière la lourde porte du Manoir du Crâne-de-Troll, on entend un luth, des rires, et le claquement sec d'un dé sur le bois.</p>
+    <div class="choix">
+      <button class="btn plein grand" id="entrer-son">Pousser la porte</button>
+      <button class="btn grand" id="entrer">Entrer sans le son</button>
+    </div>
+  </div>
+  <div class="lueur"></div>
+</div>
+
+<div id="bandeau" class="bandeau" role="status" hidden></div>
+<div class="page">
+  <header class="enseigne">
+    <button class="logo" data-aller="accueil" aria-label="Retour à la salle"><span class="plaque"><b>La Trapinette</b><small>Manoir du Crâne-de-Troll · Eauprofonde</small></span></button>
+    <nav class="nav" aria-label="Sections">
+      <button data-aller="accueil" data-section="accueil" aria-current="true">La salle</button>
+      <button data-aller="ligue" data-section="ligue">Ligue internationale</button>
+      <button data-aller="cave" data-section="cave" class="nav-cave">La Cave</button>
+      <button id="compte" class="compte"></button>
+      <div class="son-groupe"><button id="son" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg><span>Ambiance coupée</span></button><div id="volume" class="niveaux" role="slider" tabindex="0" aria-label="Volume de l'ambiance" aria-valuemin="0" aria-valuemax="5" aria-valuenow="3" title="Volume"><span data-n="1"></span><span data-n="2"></span><span data-n="3"></span><span data-n="4"></span><span data-n="5"></span></div></div>
+    </nav>
+  </header>
+  <main id="app"></main>
+  <footer class="pied"><a href="/confidentialite">Confidentialité</a> · <a href="/conditions">Conditions d'utilisation</a> · Jeu de fans non officiel</footer>
+</div>
+<div id="modal"></div>
+<div id="defi" class="defi" hidden></div>
+<div id="haut-fait" class="haut-fait" hidden aria-live="polite"></div>
+<div id="tuto" class="tuto" hidden></div>
+<div class="toast" id="toast" hidden></div>
+</body>
+</html>
